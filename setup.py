@@ -16,9 +16,10 @@ setup(
     author_email = 'aarong@broadinstitute.org',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
+    python_requires = ">=3.14",
     install_requires = [
-        "google-cloud-storage>=1.20.0",
-        "google-auth>=1.6.3",
+        "google-cloud-storage>=2.0.0",
+        "google-auth>=2.0.0",
     ],
     classifiers = [
         "Development Status :: 4 - Beta",

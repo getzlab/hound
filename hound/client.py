@@ -415,12 +415,12 @@ class HoundClient(object):
 
     def _yield_logs(self, src):
         for entry in src:
-            data = json.loads(entry.download_as_string())
+            data = json.loads(entry.download_as_bytes())
             yield LogEntry(data['entities'], data['timestamp'], data['author'], data['text'])
 
     def _yield_updates(self, src):
         for entry in src:
-            data = json.loads(entry.download_as_string())
+            data = json.loads(entry.download_as_bytes())
             yield AttributeUpdate(
                 data['entityType'],
                 data['entityName'],
@@ -592,4 +592,4 @@ class HoundClient(object):
         for page in self.bucket.list_blobs(prefix='hound', fields='items/name,nextPageToken').pages:
             for blob in page:
                 if os.path.basename(blob.name) == snowflake:
-                    return json.loads(blob.download_as_string())
+                    return json.loads(blob.download_as_bytes())
