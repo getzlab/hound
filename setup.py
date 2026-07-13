@@ -1,5 +1,9 @@
 from setuptools import setup
-from hound import __version__
+
+version_ns = {}
+with open('hound/_version.py') as v:
+    exec(v.read(), version_ns)
+__version__ = version_ns['__version__']
 
 with open('README.md') as r:
     long_description = r.read()
