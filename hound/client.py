@@ -44,7 +44,7 @@ def _bulk_upload(bucket, data):
                 print("Hound is still updating records in the background. Python will close when it's done")
                 notified = True
             proc = subprocess.Popen(
-                'gsutil -m -h "Content-Type:text/plain" cp -r {}/hound gs://{}'.format(
+                'gcloud storage cp --content-type=text/plain -r {}/hound gs://{}'.format(
                     tempdir,
                     bucket.name
                 ),
