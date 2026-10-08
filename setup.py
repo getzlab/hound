@@ -22,7 +22,7 @@ setup(
     long_description_content_type = 'text/markdown',
     python_requires = ">=3.14, <3.15",
     install_requires = [
-        "google-cloud-storage>=2.0.0",
+        "google-cloud-storage>=3.7.0",
         "google-auth>=2.0.0",
     ],
     classifiers = [
